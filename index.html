@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portofolio M. FIKRI ALFAJRI, web developer dan UI designer pemula."
+    />
+    <title>M. FIKRI ALFAJRI | Web Developer & UI Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Navigasi utama">
+        <a class="brand" href="#home" aria-label="M. FIKRI ALFAJRI - beranda">
+          <span class="brand-pixel">FA</span>
+          <span>M. FIKRI ALFAJRI</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+          <span class="sr-only">Buka menu</span>
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="nav-menu">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-layout">
+          <div class="hero-copy reveal">
+            <span class="arcade-tag">PLAYER 01 / PORTFOLIO</span>
+            <h1>Halo, saya<br /><span>M. FIKRI ALFAJRI</span></h1>
+            <p class="subtitle">Web Developer &amp; UI Designer Pemula</p>
+            <p class="hero-description">
+              Saya membuat website, sistem informasi, dan desain UI yang mudah
+              digunakan dengan visual yang segar dan fungsional.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-pink" href="#projects">Lihat Project</a>
+              <a class="button button-cyan" href="#contact">Hubungi Saya</a>
+            </div>
+            <div class="mini-stats" aria-label="Fokus portofolio">
+              <div><strong>04</strong><span>Project</span></div>
+              <div><strong>07</strong><span>Skills</span></div>
+              <div><strong>UI</strong><span>Focused</span></div>
+            </div>
+          </div>
+
+          <div class="hero-art reveal" aria-hidden="true">
+            <div class="sun-disc"></div>
+            <div class="pixel-star star-cyan"></div>
+            <div class="pixel-star star-pink"></div>
+            <div class="floating-label label-one">WEB DESIGN</div>
+            <div class="floating-label label-two">START!</div>
+            <div class="arcade-card">
+              <div class="card-top">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="avatar-window">
+                <div class="avatar-head"></div>
+                <div class="avatar-hair"></div>
+                <div class="avatar-body"></div>
+              </div>
+              <div class="ui-lines">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="console-buttons">
+                <span class="joystick"></span>
+                <span class="button-dot"></span>
+                <span class="button-dot orange"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="container about-layout">
+          <div class="section-title reveal">
+            <span class="section-number">01</span>
+            <p>Tentang Saya</p>
+            <h2>Ide digital yang <span>rapi &amp; colorful.</span></h2>
+          </div>
+          <div class="about-card reveal">
+            <p>
+              Saya adalah <strong>Web Developer pemula</strong> yang tertarik pada
+              pembuatan website, <strong>desain UI</strong>, dan
+              <strong>sistem informasi berbasis web</strong>. Saya terbiasa membuat
+              tampilan website yang rapi, mudah digunakan, dan sesuai kebutuhan
+              pengguna.
+            </p>
+            <div class="focus-list">
+              <span>Responsive Website</span>
+              <span>Information System</span>
+              <span>UI Prototype</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills section" id="skills">
+        <div class="container">
+          <div class="center-title reveal">
+            <span class="section-number">02</span>
+            <p>My Toolkit</p>
+            <h2>Skills &amp; Tools</h2>
+          </div>
+          <div class="badge-grid reveal" aria-label="Daftar keahlian">
+            <span class="skill-badge cyan">HTML</span>
+            <span class="skill-badge pink">CSS</span>
+            <span class="skill-badge orange">PHP</span>
+            <span class="skill-badge cream">MySQL</span>
+            <span class="skill-badge pink">JavaScript</span>
+            <span class="skill-badge cyan">Figma</span>
+            <span class="skill-badge orange">Canva</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects section" id="projects">
+        <div class="container">
+          <div class="projects-header reveal">
+            <div>
+              <span class="section-number">03</span>
+              <p>Featured Work</p>
+              <h2>Project Pilihan</h2>
+            </div>
+            <span class="pixel-chip">SELECT PROJECT</span>
+          </div>
+          <div class="project-grid">
+            <article class="project-card reveal" data-project="clinic">
+              <div class="project-image clinic">
+                <div class="mockup-browser">
+                  <div class="mockup-bar"><i></i><i></i><i></i></div>
+                  <div class="clinic-panels">
+                    <span class="side"></span>
+                    <span class="chart"></span>
+                    <span class="row"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Web App / PHP</span>
+                <h3>Sistem Informasi Klinik Pratama</h3>
+                <p>Web pendaftaran pasien, antrean, rekam medis, apotek, pembayaran, dan laporan.</p>
+                <button class="detail-link" type="button" data-modal="clinic">
+                  Detail Project <span>&rarr;</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="rental">
+              <div class="project-image rental">
+                <div class="console-ui">
+                  <strong>RENTAL PS</strong>
+                  <div class="gamepads">
+                    <span></span><span></span>
+                  </div>
+                  <small>AVAILABLE: 08</small>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Dashboard / MySQL</span>
+                <h3>Sistem Informasi Rental PlayStation</h3>
+                <p>Web pencatatan waktu rental, data pelanggan, transaksi, dan laporan.</p>
+                <button class="detail-link" type="button" data-modal="rental">
+                  Detail Project <span>&rarr;</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="barbershop">
+              <div class="project-image barber">
+                <div class="booking-ui">
+                  <div class="stripe"></div>
+                  <strong>Book a Cut</strong>
+                  <span class="appointment"></span>
+                  <span class="appointment short"></span>
+                  <button type="button" tabindex="-1">BOOK</button>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Booking System / UI</span>
+                <h3>Sistem Informasi Barbershop</h3>
+                <p>Web booking layanan, data pelanggan, jadwal, dan laporan.</p>
+                <button class="detail-link" type="button" data-modal="barbershop">
+                  Detail Project <span>&rarr;</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="portfolio">
+              <div class="project-image portfolio">
+                <div class="portfolio-ui">
+                  <span class="profile-circle"></span>
+                  <strong>FIKRI</strong>
+                  <span class="portfolio-line"></span>
+                  <div class="tile-row"><i></i><i></i><i></i></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Landing Page / UI Design</span>
+                <h3>Website Portofolio</h3>
+                <p>Website pribadi untuk menampilkan profil, skill, dan project.</p>
+                <button class="detail-link" type="button" data-modal="portfolio">
+                  Detail Project <span>&rarr;</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery section" id="gallery">
+        <div class="container">
+          <div class="center-title reveal">
+            <span class="section-number">04</span>
+            <p>Documentation</p>
+            <h2>Project Gallery</h2>
+          </div>
+          <div class="gallery-grid">
+            <figure class="gallery-shot large reveal">
+              <div class="shot-top"></div>
+              <div class="shot-dashboard"><i></i><i></i><i></i><i></i></div>
+              <figcaption>Dashboard Klinik</figcaption>
+            </figure>
+            <figure class="gallery-shot pink-shot reveal">
+              <div class="mobile-screen"><span></span><span></span><span></span></div>
+              <figcaption>Booking Mobile</figcaption>
+            </figure>
+            <figure class="gallery-shot cyan-shot reveal">
+              <div class="stats-screen"><b></b><b></b><b></b></div>
+              <figcaption>Rental Report</figcaption>
+            </figure>
+            <figure class="gallery-shot orange-shot reveal">
+              <div class="wireframe-screen"><span></span><span></span></div>
+              <figcaption>UI Exploration</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="container contact-panel reveal">
+          <div class="contact-copy">
+            <span class="arcade-tag">INSERT COIN / SAY HELLO</span>
+            <h2>Mari membuat sesuatu yang menarik.</h2>
+            <p>
+              Terbuka untuk kolaborasi, diskusi project, dan kesempatan belajar
+              dalam pengembangan website maupun desain UI.
+            </p>
+          </div>
+          <div class="contact-links">
+            <!-- Ganti tautan berikut dengan kontak M. FIKRI ALFAJRI yang sebenarnya. -->
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">
+              <span>WA</span> WhatsApp
+            </a>
+            <a href="mailto:hello@example.com"><span>@</span> Email</a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
+              <span>IG</span> Instagram
+            </a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+              <span>GH</span> GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> M. FIKRI ALFAJRI. Designed with pop energy.</p>
+        <a href="#home">Back to top <span>&uarr;</span></a>
+      </div>
+    </footer>
+
+    <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="modal-content">
+        <button class="modal-close" type="button" aria-label="Tutup detail">&times;</button>
+        <span class="project-type" id="modal-type"></span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <div class="modal-tags" id="modal-tags"></div>
+      </div>
+    </div>
+  </body>
+</html>
