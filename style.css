@@ -1458,16 +1458,58 @@ h3 {
 
 @media (max-width: 580px) {
   .container {
-    width: calc(100% - 28px);
+    width: calc(100% - 24px);
+  }
+
+  .section {
+    padding: 54px 0;
+  }
+
+  .navbar {
+    min-height: 70px;
+    gap: 12px;
+  }
+
+  .brand {
+    min-width: 0;
+    gap: 8px;
+    font-size: 0.86rem;
+    line-height: 1.2;
+  }
+
+  .brand-pixel {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 auto;
+    font-size: 0.58rem;
+  }
+
+  .brand span:last-child {
+    display: block;
+    max-width: clamp(132px, 46vw, 180px);
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 42px;
+    flex: 0 0 auto;
+  }
+
+  .arcade-tag {
+    max-width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 18px;
+    font-size: 0.5rem;
+    box-shadow: 3px 3px 0 var(--ink);
   }
 
   .hero {
-    padding: 46px 0 55px;
+    padding: 38px 0 48px;
   }
 
   .hero h1 {
-    font-size: clamp(2.05rem, 10.2vw, 2.7rem);
-    line-height: 1.13;
+    font-size: clamp(1.85rem, 9.4vw, 2.45rem);
+    line-height: 1.15;
     overflow-wrap: break-word;
   }
 
@@ -1477,27 +1519,50 @@ h3 {
 
   .hero-actions {
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
   }
 
   .hero-actions .button {
     width: 100%;
   }
 
+  .button {
+    min-height: 48px;
+    padding: 0 20px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    margin-bottom: 26px;
+    font-size: 0.9rem;
+  }
+
   .mini-stats {
-    gap: 22px;
+    gap: 12px;
     justify-content: space-between;
+    margin-top: 32px;
+  }
+
+  .mini-stats strong {
+    font-size: 1.56rem;
+  }
+
+  .mini-stats span {
+    font-size: 0.72rem;
   }
 
   .hero-art {
-    min-height: 423px;
+    min-height: 392px;
     padding-top: 9px;
   }
 
   .sun-disc {
     top: 35px;
-    width: 286px;
-    height: 286px;
+    width: 264px;
+    height: 264px;
   }
 
   .arcade-card {
@@ -1530,13 +1595,19 @@ h3 {
   }
 
   .label-one {
-    top: 29px;
+    top: 22px;
     right: 1px;
   }
 
   .label-two {
-    bottom: 34px;
+    bottom: 28px;
     left: 1px;
+  }
+
+  .floating-label {
+    padding: 9px 10px;
+    font-size: 0.48rem;
+    box-shadow: 3px 3px 0 var(--ink);
   }
 
   .star-cyan {
@@ -1553,13 +1624,55 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .section-title h2,
+  .center-title h2,
+  .projects-header h2,
+  .contact-copy h2 {
+    font-size: clamp(1.65rem, 8vw, 2.05rem);
+  }
+
+  .center-title,
+  .projects-header {
+    margin-bottom: 34px;
+  }
+
   .projects-header {
     flex-direction: column;
     align-items: start;
+    gap: 16px;
+  }
+
+  .pixel-chip {
+    padding: 10px 12px;
+    font-size: 0.48rem;
+  }
+
+  .project-image {
+    height: 158px;
+  }
+
+  .project-body {
+    padding: 18px 16px 19px;
+  }
+
+  .project-body h3 {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .project-body p {
+    font-size: 0.78rem;
+  }
+
+  .skill-badge {
+    min-width: 0;
+    width: calc(50% - 9px);
+    padding: 14px 12px;
   }
 
   .gallery-grid {
-    grid-template-rows: 250px repeat(3, 166px);
+    grid-template-rows: 220px repeat(3, 150px);
+    gap: 16px;
   }
 
   .gallery-shot.large,
@@ -1567,8 +1680,69 @@ h3 {
     grid-column: auto;
   }
 
+  .shot-dashboard {
+    height: 170px;
+  }
+
+  .contact-panel {
+    gap: 28px;
+    padding: 28px 18px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+
+  .contact-links a {
+    padding: 12px;
+  }
+
+  .contact-links span {
+    width: 38px;
+    height: 38px;
+  }
+
+  .modal-content {
+    padding: 34px 22px 28px;
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+
+  .modal-content h2 {
+    font-size: 1.32rem;
+  }
+
   .site-footer .container {
     flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand span:last-child {
+    max-width: 136px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.68rem, 9vw, 2rem);
+  }
+
+  .hero-art {
+    min-height: 372px;
+  }
+
+  .arcade-card {
+    width: 230px;
+  }
+
+  .avatar-head {
+    left: 76px;
+  }
+
+  .avatar-hair {
+    left: 62px;
+  }
+
+  .avatar-body {
+    left: 42px;
+    width: 132px;
   }
 }
 
