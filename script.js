@@ -52,6 +52,7 @@ const projects = {
   glow: {
     type: "Desktop & Android App / Three.js 3D",
     title: "Glow ✦ Skincare Companion",
+    image: "assets/glow-preview.png",
     description:
       "Aplikasi pendamping skincare harian desktop & mobile yang dirancang dengan visual Romantic Glassmorphism dan grafis 3D Three.js real-time. Membantu menjaga konsistensi rutinitas harian dengan simulasi langit 4 fase dinamis, botol serum 3D interaktif 360°, kunci proteksi eksfoliasi, dan streak counter.",
     features: [
@@ -95,12 +96,17 @@ const modalDescription = document.querySelector("#modal-description");
 const modalFeatures = document.querySelector("#modal-features");
 const modalTags = document.querySelector("#modal-tags");
 const modalActions = document.querySelector("#modal-actions");
+const modalImageWrap = document.querySelector("#modal-image-wrap");
+const modalImg = document.querySelector("#modal-img");
 const closeModalButton = document.querySelector(".modal-close");
 let triggerElement = null;
 
 function closeModal() {
   modal.hidden = true;
   document.body.classList.remove("modal-open");
+  if (modalImg) {
+    modalImg.src = "";
+  }
   if (triggerElement) {
     triggerElement.focus();
   }
@@ -115,6 +121,15 @@ document.querySelectorAll("[data-modal]").forEach((button) => {
     modalType.textContent = project.type;
     modalTitle.textContent = project.title;
     modalDescription.textContent = project.description;
+
+    if (modalImageWrap && modalImg) {
+      if (project.image) {
+        modalImg.src = project.image;
+        modalImageWrap.hidden = false;
+      } else {
+        modalImageWrap.hidden = true;
+      }
+    }
 
     if (modalFeatures && project.features) {
       modalFeatures.replaceChildren(
