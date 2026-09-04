@@ -49,33 +49,42 @@ const revealObserver = new IntersectionObserver(
 revealElements.forEach((element) => revealObserver.observe(element));
 
 const projects = {
-  clinic: {
-    type: "Web App / PHP",
-    title: "Sistem Informasi Klinik Pratama",
+  glow: {
+    type: "Desktop & Android App / Three.js 3D",
+    title: "Glow ✦ Skincare Companion",
     description:
-      "Web pendaftaran pasien, antrean, rekam medis, apotek, pembayaran, dan laporan.",
-    tags: ["PHP", "MySQL", "Dashboard"],
+      "Aplikasi pendamping skincare harian desktop & mobile yang dirancang dengan visual Romantic Glassmorphism dan grafis 3D Three.js real-time. Membantu menjaga konsistensi rutinitas harian dengan simulasi langit 4 fase dinamis, botol serum 3D interaktif 360°, kunci proteksi eksfoliasi, dan streak counter.",
+    features: [
+      "☀️ 4-Phase 3D Celestial Atmosphere: Langit atmosfer 3D berubah secara real-time mengikuti jam lokal perangkat (Pagi, Siang berawan, Senja rose-gold, Malam berbintang).",
+      "🧴 3D Interactive Serum Bottle: Botol serum 3D prosedural dapat diputar 360° dengan simulasi volume cairan dan gelembung mikro real-time.",
+      "🔒 Exfoliation Safety Lock: Checklist protektif sonik toner yang otomatis terkunci untuk mencegah over-exfoliasi (hanya terbuka pada Rabu & Sabtu malam).",
+      "🔥 Strict Consecutive Streak: Pelacak konsistensi harian dengan nyala api glowing untuk motivasi rutinitas.",
+      "🌐 Full Bilingual Support (EN & ID): Pengalihan bahasa instan langsung dari navigation bar untuk seluruh panduan produk dan kalender.",
+      "📱 Multi-Platform Releases: Tersedia paket resmi Android APK (v1.1.0) dengan fitur in-app auto update, serta installer Windows Setup & Portable."
+    ],
+    tags: ["React 18", "Three.js", "Tauri 2.0 (Rust)", "Capacitor", "Tailwind CSS", "Android APK", "Vite"],
+    links: [
+      { text: "GitHub Repository ↗", url: "https://github.com/yorr-amd/glow", primary: true },
+      { text: "Download APK & Releases ↗", url: "https://github.com/yorr-amd/glow/releases/tag/v1.1.0", primary: false }
+    ],
   },
-  rental: {
-    type: "Dashboard / MySQL",
-    title: "Sistem Informasi Rental PlayStation",
+  tracker: {
+    type: "Native Desktop App / Financial Manager",
+    title: "Tracker Budget",
     description:
-      "Web pencatatan waktu rental, data pelanggan, transaksi, dan laporan.",
-    tags: ["HTML/CSS", "PHP", "MySQL"],
-  },
-  barbershop: {
-    type: "Booking System / UI",
-    title: "Sistem Informasi Barbershop",
-    description:
-      "Web booking layanan, data pelanggan, jadwal, dan laporan.",
-    tags: ["UI Design", "Figma", "Responsive"],
-  },
-  portfolio: {
-    type: "Landing Page / UI Design",
-    title: "Website Portofolio",
-    description:
-      "Website pribadi untuk menampilkan profil, skill, dan project.",
-    tags: ["HTML", "CSS", "JavaScript"],
+      "Aplikasi desktop native pelacak keuangan dan anggaran pribadi yang cepat, aman, dan berorientasi privasi. Berjalan 100% offline-first dengan basis data lokal Dexie (IndexedDB), visualisasi analitik interaktif Recharts, manajemen multi-dompet & rekening, serta pelacak target tabungan impian.",
+    features: [
+      "📊 Smart Financial Dashboard: Ringkasan real-time saldo bersih, total pemasukan, pengeluaran bulanan, dan rasio tabungan.",
+      "💳 Multi-Wallet & Rekening: Kelola dompet tunai fisik, rekening bank, dan e-wallet dalam satu dashboard terpadu.",
+      "🎯 Financial Goals & Impian: Target tabungan dengan visual progress bar dinamis dan selebrasi animasi saat target tercapai.",
+      "📉 Visual Analytics & Recharts: Diagram pie chart komposisi kategori pengeluaran dan grafik tren histori bulanan.",
+      "🔄 Transaksi Berulang: Pelacakan otomatis pengeluaran rutin, tagihan berkala, dan langganan bulanan.",
+      "🛡️ 100% Offline-First & Private: Seluruh data finansial disimpan sepenuhnya di komputer lokal menggunakan Dexie IndexedDB tanpa server perantara."
+    ],
+    tags: ["React 19", "TypeScript", "Tauri 2.0 (Rust)", "Tailwind CSS v4", "Dexie.js (IndexedDB)", "Recharts", "Lucide Icons"],
+    links: [
+      { text: "Tauri Desktop Native", url: "#projects", primary: true }
+    ],
   },
 };
 
@@ -83,7 +92,9 @@ const modal = document.querySelector("#project-modal");
 const modalTitle = document.querySelector("#modal-title");
 const modalType = document.querySelector("#modal-type");
 const modalDescription = document.querySelector("#modal-description");
+const modalFeatures = document.querySelector("#modal-features");
 const modalTags = document.querySelector("#modal-tags");
+const modalActions = document.querySelector("#modal-actions");
 const closeModalButton = document.querySelector(".modal-close");
 let triggerElement = null;
 
@@ -98,10 +109,23 @@ function closeModal() {
 document.querySelectorAll("[data-modal]").forEach((button) => {
   button.addEventListener("click", () => {
     const project = projects[button.dataset.modal];
+    if (!project) return;
+
     triggerElement = button;
     modalType.textContent = project.type;
     modalTitle.textContent = project.title;
     modalDescription.textContent = project.description;
+
+    if (modalFeatures && project.features) {
+      modalFeatures.replaceChildren(
+        ...project.features.map((feature) => {
+          const li = document.createElement("li");
+          li.textContent = feature;
+          return li;
+        })
+      );
+    }
+
     modalTags.replaceChildren(
       ...project.tags.map((tag) => {
         const item = document.createElement("span");
@@ -109,6 +133,23 @@ document.querySelectorAll("[data-modal]").forEach((button) => {
         return item;
       })
     );
+
+    if (modalActions && project.links) {
+      modalActions.replaceChildren(
+        ...project.links.map((link) => {
+          const a = document.createElement("a");
+          a.href = link.url;
+          a.textContent = link.text;
+          a.className = link.primary ? "button button-pink button-sm" : "button button-cyan button-sm";
+          if (link.url.startsWith("http")) {
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+          }
+          return a;
+        })
+      );
+    }
+
     modal.hidden = false;
     document.body.classList.add("modal-open");
     closeModalButton.focus();
