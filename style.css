@@ -751,17 +751,32 @@ h3 {
 }
 
 .project-image {
-  height: 200px;
-  display: grid;
-  place-items: center;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: var(--border);
   position: relative;
   overflow: hidden;
+  background: #111522;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 350ms ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
 }
 
 /* Glow Mockup Styling */
 .project-image.glow {
-  background: radial-gradient(circle at 75% 25%, rgba(249, 56, 136, 0.45), transparent 60%), linear-gradient(135deg, #1c1330 0%, #29153a 50%, #3e1b48 100%);
+  background: #1c1330;
 }
 
 .glow-ui {
@@ -1042,7 +1057,20 @@ h3 {
 
 .gallery-shot.large {
   grid-row: 1 / span 2;
-  background: radial-gradient(circle at 60% 40%, #2f173f, #140d22);
+  background: #1c1330;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 350ms ease;
+}
+
+.gallery-shot:hover .gallery-img {
+  transform: scale(1.05);
 }
 
 .gallery-shot figcaption {
@@ -1329,6 +1357,29 @@ h3 {
   border: var(--border);
   border-radius: 21px;
   box-shadow: 9px 9px 0 var(--ink);
+}
+
+.modal-image-wrap {
+  width: 100%;
+  border: var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 0 var(--ink);
+  background: #111522;
+}
+
+.modal-image-wrap[hidden] {
+  display: none;
+}
+
+.modal-img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
 .modal-content h2 {
