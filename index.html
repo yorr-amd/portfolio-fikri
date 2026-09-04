@@ -148,25 +148,7 @@
           <div class="project-grid">
             <article class="project-card reveal" data-project="glow">
               <div class="project-image glow">
-                <div class="glow-ui">
-                  <div class="glow-top">
-                    <strong>GLOW ✦ 3D</strong>
-                    <div class="glow-chips">
-                      <span>Android</span>
-                      <span>Windows</span>
-                    </div>
-                  </div>
-                  <div class="glow-serum-preview">
-                    <div class="mini-bottle">
-                      <span class="cap"></span>
-                      <span class="body"><i class="liquid"></i></span>
-                    </div>
-                    <div class="glow-desc">
-                      <span>Celestial 3D Sky</span>
-                      <small>v1.1.0 • Three.js</small>
-                    </div>
-                  </div>
-                </div>
+                <img src="assets/glow-preview.png" alt="Glow ✦ Skincare Companion App Screenshot" class="project-img" />
               </div>
               <div class="project-body">
                 <span class="project-type">Desktop &amp; Android App / Three.js 3D</span>
@@ -216,11 +198,7 @@
           </div>
           <div class="gallery-grid">
             <figure class="gallery-shot large reveal">
-              <div class="shot-top">Glow: 4-Phase Celestial Sky</div>
-              <div class="shot-glow-sky">
-                <div class="celestial-sun"></div>
-                <div class="celestial-stars"><i></i><i></i><i></i><i></i></div>
-              </div>
+              <img src="assets/glow-preview.png" alt="Glow: 4-Phase Celestial Sky" class="gallery-img" />
               <figcaption>Glow: Real-time 3D Atmosphere</figcaption>
             </figure>
             <figure class="gallery-shot pink-shot reveal">
@@ -278,6 +256,9 @@
     <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
       <div class="modal-content">
         <button class="modal-close" type="button" aria-label="Tutup detail">&times;</button>
+        <div class="modal-image-wrap" id="modal-image-wrap" hidden>
+          <img id="modal-img" src="" alt="Preview Project" class="modal-img" />
+        </div>
         <span class="project-type" id="modal-type"></span>
         <h2 id="modal-title"></h2>
         <p id="modal-description"></p>
